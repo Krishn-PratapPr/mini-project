@@ -79,6 +79,7 @@ button:hover {
     background-color: #f9f9f9;
 }
 .invoice-cont{
+    width: 60%;
     margin: 20px;
     justify-content: center;
     align-items: center;

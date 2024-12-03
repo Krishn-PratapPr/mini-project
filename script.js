@@ -141,7 +141,7 @@ function paymentStatus(status) {
         invoiceContainer.innerHTML = invoiceHTML;
         
         // Show the invoice container
-        invoiceContainer.style.display = 'block';
+        invoiceContainer.style.display = 'flex';
         
         // Show the student content again
         document.getElementById('studentContent').style.display = 'block';
