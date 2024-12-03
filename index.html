@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Fee Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="global-header">
+        <div class="header-content">
+            <img src="logo.png" alt="College Logo" class="header-logo">
+            <p style="font-weight: 600;">Institute of Engineering And Technology</p>
+        </div>
+    </header>
+    <!-- Registration Form -->
+    <div id="registerForm" class="form-container">
+        <h2>Register</h2>
+        <input type="text" id="registerName" placeholder="Enter Name" />
+        <input type="number" id="registerRollNo" placeholder="Enter Roll Number" />
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="form-container" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="loginName" placeholder="Enter Name" />
+        <input type="number" id="loginRollNo" placeholder="Enter Roll Number" />
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Register</a></p>
+    </div>
+
+    <!-- Main Content (Student Card) -->
+    <div id="studentContent" style="display: none;">
+        <div style="display: flex;align-items: center;justify-content: center;">
+            <div class="student-card">
+                <h3 id="studentName"></h3>
+                <p><strong>Roll Number:</strong> <span id="studentRollNo"></span></p>
+                <p><strong>Course:</strong>B.E ( Computer Science Engineering ) </p>
+                <p><strong>Total Fee:</strong> ₹35000</p>
+                <button class="pay-now" onclick="payNow()">Pay Now</button>
+            </div>
+        </div>
+        
+        <button onclick="logout()">Logout</button>
+        <div id="invoiceContainer" style="display: flex;align-items: center;justify-content: center; flex-direction: column;"></div>
+    </div>
+    <!-- Mini Payment Page (Will appear after Pay Now) -->
+<div id="paymentPage" class="payment-page" style="display: none;">
+    <h3>Processing Payment...</h3>
+    <p>Please select the payment status:</p>
+    <button onclick="paymentStatus('success')">Payment Successful</button>
+    <button onclick="paymentStatus('failure')">Payment Failed</button>
+</div>
+
+<!-- Modal (dialog box) for alerts -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <p id="modal-message"></p>
+        <button id="modal-button" onclick="closeModal()">OK</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
