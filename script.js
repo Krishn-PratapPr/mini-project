@@ -127,7 +127,7 @@ function paymentStatus(status) {
             <div class="invoice-details">
                 <p><strong>Name:</strong> ${studentName}</p>
                 <p><strong>Roll Number:</strong> ${rollNumber}</p>
-                <p><strong>Course:</strong> Computer Science</p> <!-- Added Course -->
+                <p><strong>Course:</strong>B.E ( Computer Science Engineering )</p> <!-- Added Course -->
                 <p><strong>Total Fee:</strong> ₹${totalFee.toFixed(2)}</p>
                 <p><strong>Transaction ID:</strong> ${transactionID}</p>
                 <p><strong>Date & Time:</strong> ${currentDateTime}</p>
