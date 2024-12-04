@@ -173,9 +173,60 @@ function getCurrentDateTime() {
 function printInvoice() {
     const invoiceContent = document.getElementById('invoiceContainer').innerHTML;
     const printWindow = window.open('', '', 'height=400,width=600');
-    printWindow.document.write('<html><head><title>Invoice</title></head><body>');
-    printWindow.document.write(invoiceContent);
+    
+    // Define styles for the print version of the page
+    const printStyles = `
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            #invoiceContainer {
+                width: 100%;
+                padding: 20px;
+                background-color: #fff;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+            }
+
+                #invoiceContainer p{
+                    margin: 10px 20px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: #f9f9f9; 
+                }
+
+            @media print {
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+                #invoiceContainer {
+                    width: 100%;
+                    padding: 20px;
+                    background-color: #fff;
+                    page-break-before: always;
+                }
+                .no-print {
+                    display: none;
+                }
+            }
+        </style>
+    `;
+    
+    // Open the print window and write the content along with styles
+    printWindow.document.write('<html><head><title>Invoice</title>' + printStyles + '</head><body>');
+    printWindow.document.write('<div id="invoiceContainer">' + invoiceContent + '</div>');
     printWindow.document.write('</body></html>');
+    
+    // Close the document and trigger print
     printWindow.document.close();
     printWindow.print();
 }
+
