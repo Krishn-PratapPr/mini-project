@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Fee Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header id="global-header">
@@ -31,7 +31,7 @@
         <p>Don't have an account? <a href="javascript:void(0);" onclick="showRegisterForm()">Register</a></p>
     </div>
 
-    <!-- Main Content (Student Card) -->
+    <!-- Student card -->
     <div id="studentContent" style="display: none;">
         <div style="display: flex;align-items: center;justify-content: center;">
             <div class="student-card">
@@ -46,23 +46,17 @@
         <button onclick="logout()">Logout</button>
         <div id="invoiceContainer" style="display: flex;align-items: center;justify-content: center; flex-direction: column;"></div>
     </div>
-    <!-- Mini Payment Page (Will appear after Pay Now) -->
-<div id="paymentPage" class="payment-page" style="display: none;">
-    <h3>Processing Payment...</h3>
-    <p>Please select the payment status:</p>
-    <button onclick="paymentStatus('success')">Payment Successful</button>
-    <button onclick="paymentStatus('failure')">Payment Failed</button>
-</div>
 
-<!-- Modal (dialog box) for alerts -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <p id="modal-message"></p>
-        <button id="modal-button" onclick="closeModal()">OK</button>
+    <!-- Mini Payment Page -->
+    <div id="paymentPage" class="payment-page" style="display: none;">
+        <h3>Processing Payment...</h3>
+        <p>Please select the payment status:</p>
+        <button onclick="paymentStatus('success')">Payment Successful</button>
+        <button onclick="paymentStatus('failure')">Payment Failed</button>
     </div>
-</div>
 
-    <script src="script.js"></script>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>
